@@ -10,3 +10,14 @@ int main() {
     return 0;
 }
 ```
+
+```c++
+#include <iostream>
+
+int main() {
+    wchar_t wc[260] = {0};
+    wcscpy(wc, L"Out String\n");
+    std::wcout << wc;
+    return 0;
+}
+```
