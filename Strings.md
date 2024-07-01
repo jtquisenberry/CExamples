@@ -61,3 +61,39 @@ int main() {
     return 0;
 }
 ```
+
+## Conversion to `CString`
+
+`CString` is an ATL technology and not generally available in C++.
+
+```
+#include <iostream>
+#include "atlstr.h"
+
+int main() {
+    CString cs;
+    wchar_t buffer[100];
+    int cx;
+    cx = swprintf(buffer, 100, L"Printer Name: %40s", (LPCWSTR)pInfo->pPrinterName);
+    cs = (CString)buffer;
+    std::wcout << cs;
+    return 0;
+}
+```
+
+# CString
+## Conversion to char*
+
+```
+#include <iostream>
+#include "atlstr.h"
+
+int main() {
+    CString cs = "Out String";
+    CT2A ascii_string(cs);
+    std::out << ascii_string;
+    return 0;
+}
+```
+
+
