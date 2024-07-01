@@ -1,4 +1,6 @@
+# wchar_t*
 
+## Assignment with `new`, Reassignment
 
 ```c++
 #include <iostream>
@@ -10,6 +12,23 @@ int main() {
     return 0;
 }
 ```
+
+## Assignment without `new`, Reassignment
+
+```c++
+#include <iostream>
+
+int main() {
+    wchar_t* wc = {0};
+    wc = (wchar_t*)L"Out String\n";
+    std::wcout << wc;
+    return 0;
+}
+```
+
+
+# wchar_t
+## Reassignment
 
 ```c++
 #include <iostream>
