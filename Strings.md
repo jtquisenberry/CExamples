@@ -1,3 +1,24 @@
+# char*
+## Conversion to `wchar_t*`
+```c++
+#include <iostream>
+#include <cstring>
+
+int main() {
+    const char *s = "Out String";
+    size_t size = strlen(s) + 1;  
+    wchar_t* wc = new wchar_t[size]; 
+    mbstowcs(wc, s, size);
+
+    // size_t outSize;                               // Secure version in Visual Studio
+    // mbstowcs_s(&outSize, wc, size, s, size-1);    // Secure version in Visual Studio
+    std::wcout << wc << std::endl;
+    
+    return 0;
+}
+```
+
+
 # wchar_t*
 
 ## Assignment with `new`, Reassignment
